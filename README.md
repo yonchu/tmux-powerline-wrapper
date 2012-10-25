@@ -8,7 +8,7 @@ In order to use this scripts, requires to original scripts
 
 
 ## Screenshot
-[Screenshot](https://raw.github.com/yonchu/tmux-powerline-wrapper/master/img/sample_full_status.png)
+![Screenshot](https://raw.github.com/yonchu/tmux-powerline-wrapper/master/img/sample_full_status.png)
 
 
 # Requirements
