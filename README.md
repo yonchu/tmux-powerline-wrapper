@@ -62,6 +62,18 @@ if "test -f ~/.tmux/tmux-powerline/status-right.sh \
     "set-option -g status-right '#(~/.tmux/tmux-powerline-wrapper/status-right.sh)'"
 ```
 
+Add the following settings to .~/bashrc:
+
+```bash
+PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I_#P") "$PWD")'
+```
+
+Or add the following settings to ~/.zshrc:
+
+```bash
+PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I_#P") "$PWD")'
+```
+
 See also
 ---------------
 
