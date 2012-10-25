@@ -8,8 +8,18 @@ if [ -z "$TMUX_POWERLINE_ROOT_DIR" ]; then
     export TMUX_POWERLINE_ROOT_DIR=~/.tmux
 fi
 
+if [ ! -d "$TMUX_POWERLINE_ROOT_DIR" ]; then
+    echo "tmux-powerline-wrapper root directory is not found: $TMUX_POWERLINE_ROOT_DIR"
+    exit 1
+fi
+
 # The tmux-powerline-wrapper directory path.
 tmux_powerline_wrapper_dir="$TMUX_POWERLINE_ROOT_DIR/tmux-powerline-wrapper"
+
+if [ ! -d "$tmux_powerline_wrapper_dir" ]; then
+    echo "tmux-powerline-wrapper directory is not found: $tmux_powerline_wrapper_dir"
+    exit 1
+fi
 
 source "$tmux_powerline_wrapper_dir/config.sh"
 
