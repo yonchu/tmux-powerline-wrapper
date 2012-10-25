@@ -6,6 +6,11 @@ This is wrapper scripts for [erikw/tmux-powerline](https://github.com/erikw/tmux
 In order to use this scripts, requires to original scripts
 ([erikw/tmux-powerline](https://github.com/erikw/tmux-powerline)).
 
+
+## Screenshot
+[Screenshot](https://raw.github.com/yonchu/tmux-powerline-wrapper/master/img/sample_full_status.png)
+
+
 # Requirements
 
  - tmux 1.7 or later
