@@ -41,3 +41,6 @@ if [ ! -d "$wrapper_segments_path" ]; then
     echo "tmux-powerline-wrapper segments directory is not found: $wrapper_segments_path"
     exit 1
 fi
+
+# tmux window width
+window_width="$(${wrapper_segments_path}/window-width.sh)"
