@@ -35,17 +35,23 @@ tmux_session_info+=(["foreground"]="colour234")
 tmux_session_info+=(["background"]="colour148")
 tmux_session_info+=(["separator"]="${separator_right_bold}")
 
+declare -A hostname
+hostname+=(["script"]="${segments_path}/hostname.sh")
+hostname+=(["foreground"]="white")
+hostname+=(["background"]="colour63")
+hostname+=(["separator"]="${separator_right_bold}")
+
+declare -A username
+username+=(["script"]="whoami")
+username+=(["foreground"]="colour238")
+username+=(["background"]="colour69")
+username+=(["separator"]="${separator_right_bold}")
+
 declare -A ostype
 ostype+=(["script"]="${wrapper_segments_path}/ostype.sh")
 ostype+=(["foreground"]="colour21")
 ostype+=(["background"]="colour33")
 ostype+=(["separator"]="${separator_right_bold}")
-
-#declare -A username
-#username+=(["script"]="whoami")
-#username+=(["foreground"]="colour0")
-#username+=(["background"]="colour33")
-#username+=(["separator"]="${separator_right_bold}")
 
 declare -A lan_ip
 lan_ip+=(["script"]="${segments_path}/lan_ip.sh")
@@ -94,13 +100,21 @@ vcs_others+=(["separator"]="${separator_right_bold}")
 # Register Segments
 #
 register_segment "tmux_session_info"
-register_segment "ostype"
-#register_segment "username"
+if [ "$window_width" -ge 160 ]; then
+    register_segment "hostname"
+fi
+if [ "$window_width" -ge 200 ]; then
+    register_segment "username"
+fi
+if [ "$window_width" -ge 140 ]; then
+    register_segment "ostype"
+fi
 register_segment "lan_ip"
 register_segment "wan_ip"
-if [ "$window_width" -ge 165 ]; then
-    # VCS INFO
+if [ "$window_width" -ge 188 ]; then
     register_segment "vcs_branch"
+fi
+if [ "$window_width" -ge 230 ]; then
     register_segment "vcs_compare"
     register_segment "vcs_staged"
     register_segment "vcs_modified"

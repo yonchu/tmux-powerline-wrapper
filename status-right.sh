@@ -75,13 +75,17 @@ date+=(["separator"]="${separator_left_bold}")
 #
 # Register Segments
 #
-register_segment "lang"
-if [ "$window_width" -ge 147 ]; then
+if [ "$window_width" -ge 122 ]; then
+    register_segment "lang"
+fi
+if [ "$window_width" -ge 150 ]; then
     register_segment "uptime"
 fi
 register_segment "load_mem"
-if [ "$window_width" -ge 180 ]; then
+if [ "$window_width" -ge 177 ]; then
     register_segment "battery"
+fi
+if [ "$window_width" -ge 170 ]; then
     register_segment "weather"
 fi
 register_segment "date"
