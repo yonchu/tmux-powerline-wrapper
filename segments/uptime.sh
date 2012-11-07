@@ -1,8 +1,7 @@
 #!/usr/bin/env sh
 # Prints the uptime.
 
-tmux_powerline_wrapper_dir="$TMUX_POWERLINE_ROOT_DIR/tmux-powerline-wrapper"
-source "$tmux_powerline_wrapper_dir/config.sh"
+source "$TMUX_POWERLINE_WRAPPER_DIR/config.sh"
 
 uptime=$(${segments_path}/uptime.sh)
 uptime=$(echo "$uptime" | sed 's/^[ \t]*//' | sed 's/[ \t]*$//')

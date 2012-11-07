@@ -14,28 +14,23 @@ In order to use this scripts, requires to original scripts
 # Requirements
 
  - tmux 1.7 or later
- - bash version 4.0
+ - bash version 4.0 or later
 
 
 Please refer to requiremets in [erikw/tmux-powerline](https://github.com/erikw/tmux-powerline).
 
 # Installation
 
-Make directory ".tmux" and cd:
+Make directory `.tmux` and cd:
+(You can also make other directory.)
 
 ```bash
 $ mkdir ~/.tmux
 $ cd ~/.tmux
 ```
 
-If you want to change ~/.tmux. Add the following to your ~/.bashrc or ~/.zshrc.
-
-```bash
-export TMUX_POWERLINE_ROOT_DIR=~/some/path
-```
-
-Clone this scripts and [erikw/tmux-powerline](https://github.com/erikw/tmux-powerline)
-from github:
+Clone this scripts (tmux-powerline-wrapper) and [erikw/tmux-powerline](https://github.com/erikw/tmux-powerline)
+from github in the above directory:
 
 ```console
 $ git clone git://github.com/yonchu/tmux-powerline-wrapper.git
@@ -43,7 +38,8 @@ $ git clone git://github.com/erikw/tmux-powerline.git
 ```
 
 
-Add the following settings to your ~/.tmux.conf to use this scripts:
+Add the following settings to your `~/.tmux.conf` to use this scripts
+(change the path if need be):
 
 ```vim
 set-option -g status on
@@ -51,33 +47,31 @@ set -g status-interval 5
 set-option -g status-utf8 on
 
 # Left status line
-if "test -f ~/.tmux/tmux-powerline/status-left.sh \
-    -a -f ~/.tmux/tmux-powerline-wrapper/status-left.sh" \
-    "set-option -g status-left-length 80"
-if "test -f ~/.tmux/tmux-powerline/status-left.sh \
-    -a -f ~/.tmux/tmux-powerline-wrapper/status-left.sh" \
+if "~/.tmux/tmux-powerline-wrapper/test-tmux-powerline.sh" \
+    "set-option -g status-left-length 100"
+if "~/.tmux/tmux-powerline-wrapper/test-tmux-powerline.sh" \
     "set-option -g status-left '#(~/.tmux/tmux-powerline-wrapper/status-left.sh)'"
 
 # Right status line
-if "test -f ~/.tmux/tmux-powerline/status-right.sh \
-    -a -f ~/.tmux/tmux-powerline-wrapper/status-right.sh" \
+if "~/.tmux/tmux-powerline-wrapper/test-tmux-powerline.sh" \
     "set-option -g status-right-length 100"
-if "test -f ~/.tmux/tmux-powerline/status-right.sh \
-    -a -f ~/.tmux/tmux-powerline-wrapper/status-right.sh" \
+if "~/.tmux/tmux-powerline-wrapper/test-tmux-powerline.sh" \
     "set-option -g status-right '#(~/.tmux/tmux-powerline-wrapper/status-right.sh)'"
 ```
 
-Add the following settings to .~/bashrc:
+Add the following settings to `~/bashrc`:
 
 ```bash
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I_#P") "$PWD")'
 ```
 
-Or add the following settings to ~/.zshrc:
+Or add the following settings to `~/.zshrc`:
 
 ```bash
 PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I_#P") "$PWD")'
 ```
+
+If you need more information, please refer to `sample.tmux.conf`.
 
 See also
 ---------------
