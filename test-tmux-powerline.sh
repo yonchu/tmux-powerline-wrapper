@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # The tmux-powerline-wrapper directory path.
-TMUX_POWERLINE_WRAPPER_DIR="$(cd $(dirname $0) && pwd)"
+TMUX_POWERLINE_WRAPPER_DIR=$(cd "$(dirname "$0")" && pwd)
 export TMUX_POWERLINE_WRAPPER_DIR
 
 # Source tmux-powerline-wrapper global configurations.

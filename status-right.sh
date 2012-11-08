@@ -5,7 +5,7 @@
 
 # The tmux-powerline-wrapper directory path.
 if [ -z "$TMUX_POWERLINE_WRAPPER_DIR" ]; then
-    TMUX_POWERLINE_WRAPPER_DIR="$(cd $(dirname $0) && pwd)"
+    TMUX_POWERLINE_WRAPPER_DIR=$(cd "$(dirname "$0")" && pwd)
     export TMUX_POWERLINE_WRAPPER_DIR
 fi
 
