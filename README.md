@@ -73,6 +73,34 @@ PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I_#
 
 If you need more information, please refer to `sample.tmux.conf`.
 
+
+### Customize
+Copy configuration file `.tmux-powerlinerc` to `~/` or `~/.tmux/`.
+Edit the contents to suit your environment.
+
+```console
+$ cp ~/.tmux/tmux-powerline-wrapper/.tmux-powerlinerc ~/
+$ vim ~/.tmux-powerlinerc
+```
+`~/.tmux-powerlinerc` and `~/.tmux/.tmux-powerlinerc` will be automatically load.
+
+And copy status-line setting file `.tmux-powerline-status-left.sh` and
+`.tmux-powerline-status-right.sh` to `~/` or `~/.tmux/`.
+Edit the two status scripts to suit you needs.
+A number of common segments are included that covers some general functions
+in `tmux-powerline/segments` or `tmux-powerline-wrapper/segments`.
+
+It should be quite easy to add you own segments.
+
+```console
+$ cp ~/.tmux/tmux-powerline-wrapper/.tmux-powerline-status-left.sh ~/
+$ cp ~/.tmux/tmux-powerline-wrapper/.tmux-powerline-status-right.sh ~/
+$ vim ~/.tmux-powerline-status-*.sh
+```
+
+`~/.tmux-powerline-status-\*.sh` and `~/.tmux/.tmux-powerline-status-\*.sh` will be automatically load.
+You need to set nothing in your `.tmux.conf`
+
 See also
 ---------------
 
