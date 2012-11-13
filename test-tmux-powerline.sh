@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# Disable tmux-powerline?
+DISABLE_TMUX_POWERLINE=$(tmux showenv -g DISABLE_TMUX_POWERLINE 2> /dev/null)
+DISABLE_TMUX_POWERLINE=${DISABLE_TMUX_POWERLINE#*=}
+if [ -n "$DISABLE_TMUX_POWERLINE" ]; then
+    exit 1
+fi
+
 # The tmux-powerline-wrapper directory path.
 TMUX_POWERLINE_WRAPPER_DIR=$(cd "$(dirname "$0")" && pwd)
 export TMUX_POWERLINE_WRAPPER_DIR

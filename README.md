@@ -74,6 +74,20 @@ PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I_#
 If you need more information, please refer to `sample.tmux.conf`.
 
 
+If you disable tmux-powerline, set `DISABLE_TMUX_POWERLINE` and export it
+before tmux starts up.
+```bash
+DISABLE_TMUX_POWERLINE=true
+export DISABLE_TMUX_POWERLINE
+```
+
+If you disable tmux-powerline while tmux is running, you can run
+```console
+$ tmux setenv -ug DISABLE_TMUX_POWERLINE
+```
+
+and then reload tmux configurations.
+
 ### Customize
 Copy configuration file `.tmux-powerlinerc` to `~/` or `~/.tmux/`.
 Edit the contents to suit your environment.
