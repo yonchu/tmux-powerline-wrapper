@@ -6,6 +6,9 @@
 #   tmux-powerline-root-directory(like ~/.tmux)/.tmux-powerlinerc
 #
 
+# Usage of patched font for symbols. true or false.
+#USE_PATCHED_FONT=false
+
 # Weather Yahoo
 # Tokyo, JP - http://weather.yahoo.com/japan/tokyo-prefecture/tokyo-26235342/
 TMUX_POWERLINE_WEATHER_YAHOO_LOCATION='26235342'
