@@ -118,4 +118,4 @@ You need to set nothing in your `.tmux.conf`
 See also
 ---------------
 
-* [よんちゅBlog](http://yonchu.hatenablog.com/)
+* 日本語の解説:[カッコイイtmuxを目指して!! - tmux-powerlineを改良したよ - よんちゅBlog](http://yonchu.hatenablog.com/entry/2012/11/16/100458)
