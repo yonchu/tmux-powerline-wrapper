@@ -12,17 +12,21 @@ fi
 
 # PLATFORM {linux,bsd,mac}
 if [ -z "$PLATFORM" ]; then
-    case "$OSTYPE" in
-        darwin*)
-            export PLATFORM="mac"
+    case `uname -s` in
+        Darwin)
+            PLATFORM="mac"
             ;;
-        freebsd*)
-            export PLATFORM="bsd"
+        FreeBSD)
+            PLATFORM="bsd"
             ;;
-        linux*)
-            export PLATFORM="linux"
+        Linux)
+            PLATFORM="linux"
+            ;;
+        *)
+            PLATFORM="linux"
             ;;
     esac
+    export PLATFORM
 fi
 
 # Set .tmux-powerlinerc.
