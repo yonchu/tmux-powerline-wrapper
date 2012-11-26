@@ -62,13 +62,13 @@ if "~/.tmux/tmux-powerline-wrapper/test-tmux-powerline.sh" \
 Add the following settings to `~/bashrc`:
 
 ```bash
-PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I_#P") "$PWD")'
+PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 ```
 
 Or add the following settings to `~/.zshrc`:
 
 ```bash
-PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I_#P") "$PWD")'
+PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 ```
 
 If you need more information, please refer to `sample.tmux.conf`.
