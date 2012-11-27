@@ -5,31 +5,33 @@
 # 1. Go to Yahoo weather http://weather.yahoo.com/
 # 2. Find the weather for you location
 # 3. Copy the last numbers in that URL. e.g. "http://weather.yahoo.com/united-states/california/newport-beach-12796587/" has the number "12796587"
+location="12796587"
 
+# Can be any of {c,f,k}.
+unit="f"
+
+# The update period in seconds.
+update_period=600
+
+### Additional Code {{{
 # Source config.sh
 source "$TMUX_POWERLINE_WRAPPER_DIR/config.sh"
 
 # Set location.
 if [ -n "$TMUX_POWERLINE_WEATHER_YAHOO_LOCATION" ]; then
     location=$TMUX_POWERLINE_WEATHER_YAHOO_LOCATION
-else
-    location='12796587'
 fi
 
 # Set unit.
-# Can be any of {c,f,k}.
 if [ -n "$TMUX_POWERLINE_WEATHER_YAHOO_UNIT" ]; then
     unit=$TMUX_POWERLINE_WEATHER_YAHOO_UNIT
-else
-    unit='f'
 fi
 
 # The update period in seconds.
 if [ -n "$TMUX_POWERLINE_WEATHER_YAHOO_UPDATE_PERIOD" ]; then
     update_period=$TMUX_POWERLINE_WEATHER_YAHOO_UPDATE_PERIOD
-else
-    update_period=600
 fi
+# }}}
 
 # Cache file.
 tmp_file="${tp_tmpdir}/weather_yahoo.txt"
