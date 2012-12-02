@@ -124,8 +124,8 @@ if [ -z "$degree" ]; then
             exit 1
         fi
 # <yweather:units temperature="F" distance="mi" pressure="in" speed="mph"/>
-    unit=$(echo "$weather_data" | grep -PZo "<yweather:units [^<>]*/>" | sed 's/.*temperature="\([^"]*\)".*/\1/')
-    condition=$(echo "$weather_data" | grep -PZo "<yweather:condition [^<>]*/>")
+    unit=$(echo "$weather_data" | grep -Zo "<yweather:units [^<>]*/>" | sed 's/.*temperature="\([^"]*\)".*/\1/')
+    condition=$(echo "$weather_data" | grep -Zo "<yweather:condition [^<>]*/>")
 # <yweather:condition  text="Clear"  code="31"  temp="66"  date="Mon, 01 Oct 2012 8:00 pm CST" />
     degree=$(echo "$condition" | sed 's/.*temp="\([^"]*\)".*/\1/')
     condition=$(echo "$condition" | sed 's/.*text="\([^"]*\)".*/\1/')
