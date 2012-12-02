@@ -15,7 +15,7 @@ update_period=600
 
 ### Additional Code {{{
 # Source config.sh
-source "$TMUX_POWERLINE_WRAPPER_DIR/config.sh"
+source "$TMUX_POWERLINE_WRAPPER_DIR/config.sh" || exit 1
 
 # Set location.
 if [ -n "$TMUX_POWERLINE_WEATHER_YAHOO_LOCATION" ]; then
