@@ -3,6 +3,6 @@
 
 source "$TMUX_POWERLINE_WRAPPER_DIR/config.sh" || exit 1
 
-echo "(${segments_path}/load.sh) Ⓜ  $(${wrapper_segments_path}/used-mem.sh)%"
+echo "($(${segments_path}/load.sh)) Ⓜ  $(${wrapper_segments_path}/used-mem.sh)%"
 
 exit 0
