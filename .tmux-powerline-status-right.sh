@@ -44,7 +44,10 @@ weather+=(["background"]="colour37")
 weather+=(["separator"]="${separator_left_bold}")
 
 declare -A date
-date+=(["script"]="${wrapper_segments_path}/date.sh")
+#date+=(["script"]="${wrapper_segments_path}/date.sh")
+#date+=(["script"]="${wrapper_segments_path}/date-full.sh")
+date+=(["script"]="${wrapper_segments_path}/date-en.sh")
+#date+=(["script"]="${wrapper_segments_path}/date-en-full.sh")
 date+=(["foreground"]="colour136")
 date+=(["background"]="colour235")
 date+=(["separator"]="${separator_left_bold}")
