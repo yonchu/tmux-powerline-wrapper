@@ -3,8 +3,6 @@
 
 source "$TMUX_POWERLINE_WRAPPER_DIR/config.sh" || exit 1
 
-load=$(${segments_path}/load.sh)
-load=$(echo "$load" | sed 's/^[ \t]*//' | sed 's/[ \t]*$//')
-echo "(${load}) Ⓜ  $(${wrapper_segments_path}/used-mem.sh)%"
+echo "(${segments_path}/load.sh) Ⓜ  $(${wrapper_segments_path}/used-mem.sh)%"
 
 exit 0
