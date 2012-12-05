@@ -10,25 +10,6 @@ if [ ! -d "$tmux_powerline_dir" ]; then
     exit 1
 fi
 
-# PLATFORM {linux,bsd,mac}
-if [ -z "$PLATFORM" ]; then
-    case `uname -s` in
-        Darwin)
-            PLATFORM="mac"
-            ;;
-        FreeBSD)
-            PLATFORM="bsd"
-            ;;
-        Linux)
-            PLATFORM="linux"
-            ;;
-        *)
-            PLATFORM="linux"
-            ;;
-    esac
-    export PLATFORM
-fi
-
 # Set .tmux-powerlinerc.
 TMUX_POWERLINE_RC_FILE='.tmux-powerlinerc'
 
