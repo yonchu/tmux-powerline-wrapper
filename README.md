@@ -4,7 +4,7 @@ tmux-powerline-wrapper
 This is wrapper scripts for [erikw/tmux-powerline](https://github.com/erikw/tmux-powerline).
 
 In order to use this scripts, requires to original scripts
-([erikw/tmux-powerline](https://github.com/erikw/tmux-powerline)).
+([yonchu/tmux-powerline](https://github.com/yonchu/tmux-powerline)).
 
 
 ## Screenshot
@@ -29,12 +29,12 @@ $ mkdir ~/.tmux
 $ cd ~/.tmux
 ```
 
-Clone this scripts (tmux-powerline-wrapper) and [erikw/tmux-powerline](https://github.com/erikw/tmux-powerline)
+Clone this scripts (tmux-powerline-wrapper) and [yonchu/tmux-powerline](https://github.com/yonchu/tmux-powerline)
 from github in the above directory:
 
 ```console
 $ git clone git://github.com/yonchu/tmux-powerline-wrapper.git
-$ git clone git://github.com/erikw/tmux-powerline.git
+$ git clone git://github.com/yonchu/tmux-powerline.git
 ```
 
 
